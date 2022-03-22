@@ -104,7 +104,7 @@ namespace TelaT
             }
             else
             {
-                FormPaciente form = new FormPaciente();
+                FormOpcaoInvalida form = new FormOpcaoInvalida();
                 form.Show();
                 this.BackColor = Color.Yellow;
 
@@ -115,8 +115,45 @@ namespace TelaT
         {
             this.Close();
         }
-
     }
+
+    public class FormOpcaoInvalida : Form
+    {
+        private System.ComponentModel.IContainer components = null;
+
+        Label lblInvalid;
+        Button btnCancel;
+
+        public FormOpcaoInvalida()
+        {
+            this.lblInvalid = new Label();
+            this.lblInvalid.Text = "Opção Inválida";
+            this.lblInvalid.Location = new Point(50, 30);
+            this.Controls.Add(this.lblInvalid);
+
+            this.btnCancel = new Button();
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.Location = new Point(110, 230);
+            this.btnCancel.Size = new Size(80, 30);
+            this.btnCancel.Click += new EventHandler(this.handleCancelClick);
+
+            this.Controls.Add(this.lblInvalid);
+            this.Controls.Add(this.btnCancel);
+
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(300, 300);
+            this.Text = "Opção Inválida";
+            this.StartPosition = FormStartPosition.CenterScreen;
+
+
+        }
+        private void handleCancelClick(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+
 
     public class FormDentista : Form
     {
