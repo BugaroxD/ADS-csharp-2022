@@ -6,7 +6,7 @@ namespace Views
 {
     public class AgendamentoProcedimentoView
     {
-        public static void InserirAgendamentoProcedimento()
+        public static void IncluirAgendamentoProcedimento()
         {
             int AgendamentoId = 0;
             int ProcedimentoId = 0;
@@ -30,7 +30,7 @@ namespace Views
                 throw new Exception("ID inválido.");
             }
 
-            AgendamentoProcedimentoController.InserirAgendamentoProcedimento(
+            AgendamentoProcedimentoController.IncluirAgendamentoProcedimento(
                 AgendamentoId,
                 ProcedimentoId
             );
@@ -58,7 +58,7 @@ namespace Views
 
         public static void ListarAgendamentoProcedimentos()
         {
-            foreach (AgendamentoProcedimento item in AgendamentoProcedimentoController.VisualizarAgendamentoProcedimento())
+            foreach (AgendamentoProcedimento item in AgendamentoProcedimentoController.VisualizarAgendamentoProcedimentos())
             {
                 Console.WriteLine(item);
             }

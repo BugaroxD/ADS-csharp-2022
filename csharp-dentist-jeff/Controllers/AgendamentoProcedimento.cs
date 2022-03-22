@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Controllers
 {
-    public class AgendamentoAgendamentoProcedimentoController
+    public class AgendamentoProcedimentoController
     {
         public static AgendamentoProcedimento IncluirAgendamentoProcedimento(
             int AgendamentoId,
