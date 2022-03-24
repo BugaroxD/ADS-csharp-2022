@@ -11,13 +11,6 @@ using System.IO;
 namespace Views.Lib
 {
     public delegate void HandleButton(object sender, EventArgs e);
-    public class FormDocument : BaseForm
-    {
-        public FormDocument() : base("Menu Principal")
-        {
-        }
-    }
-
     public class LabelField : Label
     {
 

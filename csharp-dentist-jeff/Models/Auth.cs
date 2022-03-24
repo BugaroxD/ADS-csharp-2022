@@ -13,7 +13,7 @@ namespace Models
         )
         {
             Paciente paciente = Paciente.GetPacientes()
-                .Find(Paciente => Paciente.Email == Email && BCrypt.Net.BCrypt.Verify(Senha, Paciente.Senha));
+                .Find(Paciente => Paciente.Email == Email && Paciente.Senha == Senha);
 
             if (paciente != null)
             {
@@ -25,7 +25,7 @@ namespace Models
             else
             {
                 Dentista dentista = Dentista.GetDentistas()
-                    .Find(Dentista => Dentista.Email == Email && BCrypt.Net.BCrypt.Verify(Senha, Dentista.Senha));
+                    .Find(Dentista => Dentista.Email == Email && Dentista.Senha == Senha);
                 System.Console.WriteLine(dentista.Senha);
                 if (dentista != null)
                 {
